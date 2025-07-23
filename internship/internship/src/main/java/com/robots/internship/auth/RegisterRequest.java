@@ -1,6 +1,7 @@
 package com.robots.internship.auth;
 
 
+import com.robots.internship.user.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,4 +15,5 @@ public class RegisterRequest {
     private String fullName;
     private String email;
     private String password;
+    private Role role;
 }
