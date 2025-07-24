@@ -1,6 +1,8 @@
 package com.robots.internship.user;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.robots.internship.robot.Robot;
 import com.robots.internship.token.Token;
 import jakarta.persistence.*;
 import lombok.*;
@@ -36,6 +38,10 @@ public class User implements UserDetails, Serializable {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Robot> robots;
 
     @OneToMany(mappedBy = "user")
     private transient List<Token> tokens;

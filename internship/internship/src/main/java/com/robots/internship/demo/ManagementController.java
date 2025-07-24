@@ -23,6 +23,4 @@ public class ManagementController {
     public String delete(){
         return "DELETE:: management controller";
     }
-
-
 }
